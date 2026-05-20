@@ -9,7 +9,7 @@ services:
       - 9090:9090
   loki:
     image: grafana/loki:latest
-    network:
+    networks:
       - red-monitoreo
     ports:
       - 3100:3100

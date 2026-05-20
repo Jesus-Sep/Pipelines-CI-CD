@@ -16,6 +16,33 @@ Luego levanta el stack de monitoreo:
 docker compose -f docker-compose.monitoring.yaml up -d
 ```
 
+Después de levantar el stack, puedes entrar a Grafana en:
+
+```text
+http://127.0.0.1:3000/
+```
+
+Usuario: `admin`
+
+Contraseña: `admin`
+
+## Conectar Grafana con Prometheus y Loki
+
+1. En Grafana, ve a `Connections` > `Add new Connection` > selecciona `Prometheus` o `Loki`.
+2. Haz clic en `Add new data source`.
+
+- Para Prometheus, usa la URL de conexión:
+
+```text
+http://prometheus:9090
+```
+
+- Para Loki, usa la URL de conexión:
+
+```text
+http://loki:3100
+```
+
 ## Instalar Django Prometheus
 
 Instala la librería en el proyecto:
