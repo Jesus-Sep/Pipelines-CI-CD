@@ -168,3 +168,11 @@ class Dog(ExportModelOperationsMixin('dog'), models.Model):
 Guía oficial sobre buenas prácticas de instrumentación:
 
 https://prometheus.io/docs/practices/instrumentation/
+
+## Nota final
+
+Después de hacer cambios en los modelos o agregar `django_prometheus`, reconstruye la API para que los cambios se apliquen correctamente.
+
+```shell
+docker compose up --build --force-recreate
+```
