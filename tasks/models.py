@@ -1,7 +1,8 @@
 from django.db import models
 from django_prometheus.models import ExportModelOperationsMixin
+
 # Create your models here.
-class Task(ExportModelOperationsMixin('taks'), models.Model):
+class Task(ExportModelOperationsMixin('tasks'), models.Model):
     created = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=100, blank=False)
     completed = models.BooleanField(default=False)

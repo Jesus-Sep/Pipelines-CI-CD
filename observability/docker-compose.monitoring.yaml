@@ -13,7 +13,6 @@ services:
       - red-monitoreo
     ports:
       - 3100:3100
-  
   grafana:
     image: grafana/grafana:latest
     networks:
