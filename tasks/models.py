@@ -1,6 +1,7 @@
 from django.db import models
 from django_prometheus.models import ExportModelOperationsMixin
 
+
 # Create your models here.
 class Task(ExportModelOperationsMixin('tasks'), models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -11,3 +12,8 @@ class Task(ExportModelOperationsMixin('tasks'), models.Model):
     )
     class Meta:
         ordering = ["created"]
+
+class Dog(ExportModelOperationsMixin('dog'), models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    breed = models.CharField(max_length=100, blank=True, null=True)
+    age = models.PositiveIntegerField(blank=True, null=True)

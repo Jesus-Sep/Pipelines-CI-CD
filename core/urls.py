@@ -1,8 +1,9 @@
+from django.contrib import admin
 from django.http import JsonResponse
 from django.urls import include, path
 from rest_framework import routers
 
-from tasks.views import UserViewSet, GroupViewSet, TaskViewSet
+from tasks.views import GroupViewSet, TaskViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r"users", UserViewSet)
@@ -18,5 +19,6 @@ urlpatterns = [
     path("health/", health),
     path("", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path('', include('django_prometheus.urls'))
+    path('', include('django_prometheus.urls')),
+    path('admin/', admin.site.urls),
 ]

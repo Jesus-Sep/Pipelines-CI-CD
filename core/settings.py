@@ -1,6 +1,7 @@
 
 import os
 from pathlib import Path
+
 import environ
 
 env = environ.Env()
@@ -23,12 +24,12 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django_prometheus',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
     'tasks',
     "corsheaders",
-    'django_prometheus'
 ]
 
 MIDDLEWARE = [
