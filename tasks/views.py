@@ -31,3 +31,4 @@ class TaskViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+objeto_oculto=69
